@@ -37,7 +37,7 @@
 void fuelleDatenbank(std::vector<Medium *> &medien);
 void mediumHinzufuegen(std::vector<Medium *> &medien);
 void mediumEntfernen(std::vector<Medium *> &medien);
-void mediumAusleihen(std::vector<Medium *> &medien, Datum aktuellesDatum);
+void mediumAusleihen(std::vector<Medium *> &medien, const Datum &aktuellesDatum);
 void mediumZurueckgeben(std::vector<Medium *> &medien);
 void alleMedienAusgeben(std::vector<Medium *> &medien);
 void verleichteMeidenAusgeben(std::vector<Medium *> &medien);
@@ -338,7 +338,7 @@ void mediumEntfernen(std::vector<Medium *> &medien)
 /////////////////////////////////////////////////////
 // Funktion leiht ein Medium aus der Datenbank aus //
 /////////////////////////////////////////////////////
-void mediumAusleihen(std::vector<Medium *> &medien, Datum aktuellesDatum)
+void mediumAusleihen(std::vector<Medium *> &medien, const Datum &aktuellesDatum)
 {
     // Einlesen der ID (�ber std::cin.ignore(10, '\n'), wird die
     // Enter-Eingabe am Ende std::cin Eingabe ignoriert
